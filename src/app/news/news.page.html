@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-item>
+    <ion-label position="floating">Titulo</ion-label>
+    <ion-input type="text" [(ngModel)] = "titulo"  ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Subtitulo</ion-label>
+    <ion-input type="text" [(ngModel)] = "subtitulo" ></ion-input>
+  </ion-item>
+  
+  <ion-button (click)="preencheLista(titulo,subtitulo)">Preenche Lista</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let form of formulario">      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{form.titulo}}
+          </ion-col>
+          <ion-col>
+            {{form.subtitulo}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+
+  <!--<ul>
+    <legend>Objeto</legend>
+    <li>Nome: {{formulario.titulo}}</li>
+    <li>Idade: {{formulario.subtitulo}}</li>    
+  </ul>
+  -->
+</ion-content>
